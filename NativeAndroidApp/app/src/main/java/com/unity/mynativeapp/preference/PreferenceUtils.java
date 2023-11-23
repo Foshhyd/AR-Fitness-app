@@ -211,19 +211,15 @@ public class PreferenceUtils {
     boolean enableFaceTracking =
         sharedPreferences.getBoolean(
             context.getString(R.string.pref_key_live_preview_face_detection_face_tracking), false);
-    float minFaceSize =
-        Float.parseFloat(
-            sharedPreferences.getString(
-                context.getString(R.string.pref_key_live_preview_face_detection_min_face_size),
-                "0.1"));
+
 
     FaceDetectorOptions.Builder optionsBuilder =
         new FaceDetectorOptions.Builder()
             .setLandmarkMode(landmarkMode)
             .setContourMode(contourMode)
             .setClassificationMode(classificationMode)
-            .setPerformanceMode(performanceMode)
-            .setMinFaceSize(minFaceSize);
+            .setPerformanceMode(performanceMode);
+
     if (enableFaceTracking) {
       optionsBuilder.enableTracking();
     }

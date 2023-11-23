@@ -26,7 +26,7 @@ public class SharedClass {
     public static void addControlsToUnityFrame(Activity activity) {
         UnityPlayer unityPlayer = ((IUnityPlayerSupport) UnityPlayer.currentActivity).getUnityPlayerConnection();
         FrameLayout layout = unityPlayer.getFrameLayout();
-        Button showMainButton = new Button(activity);
+        /*Button showMainButton = new Button(activity);
         showMainButton.setText("Show Main");
         showMainButton.setX(10);
         showMainButton.setY(500);
@@ -58,12 +58,12 @@ public class SharedClass {
                 unityPlayer.unload();
             }
         });
-        layout.addView(unloadButton, 350, 200);
+        layout.addView(unloadButton, 350, 200);*/
 
         Button finishButton = new Button(activity);
         finishButton.setText("Activity Finish");
-        finishButton.setX(630);
-        finishButton.setY(800);
+        finishButton.setX(100);
+        finishButton.setY(100);
 
         finishButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {

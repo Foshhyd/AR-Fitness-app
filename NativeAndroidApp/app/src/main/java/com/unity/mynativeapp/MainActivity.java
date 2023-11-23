@@ -36,7 +36,7 @@ public class MainActivity extends AppCompatActivity {
     private boolean isGameActivity = false;
 
     private Button mShowUnityButton;
-    private Button mShowUnityGameButton;
+    //private Button mShowUnityGameButton;
 
 
     @Override
@@ -58,7 +58,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        handleIntent(getIntent());
+        //handleIntent(getIntent());
 
         if (!allRuntimePermissionsGranted()) {
             getRuntimePermissions();
@@ -118,11 +118,11 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onNewIntent(Intent intent) {
         super.onNewIntent(intent);
-        handleIntent(intent);
+        /*handleIntent(intent);
         setIntent(intent);
     }
 
-    void handleIntent(Intent intent) {
+    /*void handleIntent(Intent intent) {
         if (intent == null || intent.getExtras() == null) return;
 
         if (intent.getExtras().containsKey("setColor")) {
@@ -141,7 +141,7 @@ public class MainActivity extends AppCompatActivity {
                     v.setBackgroundColor(0xFFd6d7d7);
                     break;
             }
-        }
+        }*/
     }
 
     public void onClickShowUnity(View v) {
@@ -155,9 +155,9 @@ public class MainActivity extends AppCompatActivity {
                 intent = new Intent(this, getMainUnityActivityClass());
                 break;
 
-            case R.id.show_unity_game_button:
-                intent = new Intent(this, getMainUnityGameActivityClass());
-                break;
+            //case R.id.show_unity_game_button:
+              //  intent = new Intent(this, getMainUnityGameActivityClass());
+              //  break;
 
             default:
                 return;
@@ -254,34 +254,34 @@ public class MainActivity extends AppCompatActivity {
 
     private void adjustButtons() {
         mShowUnityButton = findViewById(R.id.show_unity_button);
-        mShowUnityGameButton = findViewById(R.id.show_unity_game_button);
+        //mShowUnityGameButton = findViewById(R.id.show_unity_game_button);
 
         if (existUnityPlayerActivity()) {
             mShowUnityButton.setVisibility(View.VISIBLE);
             mActivityType = ActivityType.PLAYER_ACTIVITY;
         }
 
-        if (existUnityPlayerGameActivity()) {
-            mShowUnityGameButton.setVisibility(View.VISIBLE);
+        /*if (existUnityPlayerGameActivity()) {
+            //mShowUnityGameButton.setVisibility(View.VISIBLE);
             mActivityType = ActivityType.PLAYER_GAME_ACTIVITY;
         }
 
         if (mShowUnityButton.getVisibility() == View.VISIBLE && mShowUnityGameButton.getVisibility() == View.VISIBLE) {
             mActivityType = ActivityType.BOTH;
-        }
+        }*/
     }
 
     private void disableShowUnityButtons() {
         if (mActivityType != ActivityType.BOTH) return;
 
         mShowUnityButton.setEnabled(!isGameActivity);
-        mShowUnityGameButton.setEnabled(isGameActivity);
+        //mShowUnityGameButton.setEnabled(isGameActivity);
     }
 
     private void enableShowUnityButtons() {
         if (mActivityType != ActivityType.BOTH) return;
 
         mShowUnityButton.setEnabled(true);
-        mShowUnityGameButton.setEnabled(true);
+        //mShowUnityGameButton.setEnabled(true);
     }
 }

@@ -28,23 +28,23 @@
             android:visibility="gone" />
 
          <!--Refresh Game Activity-->
-        <Button
+        <!--<Button
             android:id="@+id/show_unity_game_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="@dimen/fab_margin"
             android:onClick="onClickShowUnity"
             android:text="@string/show_unity_game"
-            android:visibility="gone" />
+            android:visibility="gone" />-->
 
-        <Button
+        <!--<Button
             android:id="@+id/finish_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="@dimen/fab_margin"
             android:onClick="onClickFinish"
             android:text="@string/finish_unity" />
-
+-->
         <Button
             android:id="@+id/kotlin_entry_point"
             android:layout_width="wrap_content"
